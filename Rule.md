@@ -6,7 +6,9 @@
 ## Validation Rules در لاراول ۱۲
 
 در لاراول ۱۲ می‌توانید با متد `validate` اعتبارسنجی درخواست‌ها را انجام دهید. قوانین اعتبارسنجی به صورت رشته یا آرایه تعریف می‌شوند:
+
 <div dir="ltr">
+    
 ```
 $request->validate([
     'name' => 'required|string|max:255',
@@ -14,6 +16,7 @@ $request->validate([
     'password' => 'required|min:8|confirmed',
 ]);
 ```
+
 </div>
 مثلا برای ایمیل از قوانین `required` و `email` و `unique` استفاده می‌شود [translate:لاراول ۱۲].  
 
@@ -22,13 +25,16 @@ $request->validate([
 
 می‌توانید یک فیلد را منوط به پر شدن یا مقدار فیلد دیگر کنید. به عنوان مثال `password` منوط به پر بودن `email`:
 <div dir="ltr">
+    
 ```
 $request->validate([
     'email' => 'required|email',
     'password' => 'required_with:email|min:8',
 ]);
 ```
+
 </div>
+
 
 یا با متدهای شرطی پیچیده‌تر با `Rule::when`:
 
@@ -48,6 +54,7 @@ $request->validate([
     ],
 ]);
 ```
+
 </div>
 ## ساخت Rule سفارشی در لاراول ۱۲
 
